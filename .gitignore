@@ -1,0 +1,5 @@
+# ignore python build files .pyc
+*.pyc
+
+#ignore the virtual environment files:
+flask-env/
