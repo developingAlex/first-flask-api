@@ -8,8 +8,10 @@ without worrying about versions.
 ### Prerequisites
 
 * `sudo apt install python3-venv`
+* python installed
 
-### Walkthrough
+### Walkthrough 
+<small>(Record of the steps I took)</small>
 
 1. Make a new virtual environment in a directory called flask-env:<br>
     `python3 -m venv flask-env`
@@ -19,7 +21,9 @@ without worrying about versions.
     `source flask-env/bin/activate`
 1. `pip install Flask`
     * This gave a red warning output: <br>`Failed building wheel for MarkupSafe`
-    * This gave a warning output: <br>`You are using pip version 8.1.1, however version 10.0.0 is available.`<br>`You should consider upgrading via the 'pip install --upgrade pip' command.`
+    * This gave a warning output: <br>`You are using pip version 8.1.1, however 
+        version 10.0.0 is available.`<br>`You should consider upgrading via 
+        the 'pip install --upgrade pip' command.`
 1. `pip install --upgrade pip`
 1. Wasting a lot of time trying to investigate this Failed building wheel for 
 MarkupSafe issue.. the main parts of the error output are:<br>
@@ -44,8 +48,8 @@ MarkupSafe issue.. the main parts of the error output are:<br>
     `pip uninstall Flask`<br>
     `pip install Flask`<br>
 
-    But that seemed to complete way too quickly, as if it didn&rsquo;t retry all the 
-    things it did the first time.
+    But that seemed to complete way too quickly, as if it didn&rsquo;t retry 
+    all the things it did the first time.
 
     going to try doing the same for the packages that produced the errors 
     originally:<br>
@@ -59,4 +63,19 @@ MarkupSafe issue.. the main parts of the error output are:<br>
 
     Ok going to assume that is sorted out now and continue on&hellip;
 
-1. 
+1. Created a file `index.py` to be the main server app with following code:
+
+    ```python
+    from flask import Flask
+
+    app = Flask(__name__)
+
+    @app.route("/")
+    def hello():
+    return "hello world"
+
+    if __name__ == '__main__':
+        app.run(debug=True)
+    ```
+1. Executing `python index.py` in the terminal and then visit localhost:5000 in
+    the browser
