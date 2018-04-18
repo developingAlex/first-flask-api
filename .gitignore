@@ -1,5 +1,8 @@
-# ignore python build files .pyc
+# Ignore the python build files .pyc
 *.pyc
 
-#ignore the virtual environment files:
+# Ignore the virtual environment files:
 flask-env/
+
+# Ignore the .vscode settings directory:
+.vscode/
