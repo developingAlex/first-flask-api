@@ -79,3 +79,8 @@ MarkupSafe issue.. the main parts of the error output are:<br>
     ```
 1. Executing `python index.py` in the terminal and then visit localhost:5000 in
     the browser
+
+1. The line `@app.route("/")` just above the hello function is a python function
+    decorator, basically it means that flask's route("/") function is being
+    called and is also being passed our hello function. 
+    [Link to more on decorators](https://www.python.org/dev/peps/pep-0318/)
