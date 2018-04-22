@@ -6,3 +6,6 @@ flask-env/
 
 # Ignore the .vscode settings directory:
 .vscode/
+
+# Ignore databases:
+*.sqlite
