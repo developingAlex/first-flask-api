@@ -89,7 +89,7 @@ MarkupSafe issue.. the main parts of the error output are:<br>
     The following was taken from the tutorial:<br>
     https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-2-724ebf04d12
 
-1. The following code is the CRUD app that only handles one type, users:<br>
+1. The following code is the CRUD app that only handles one type, users, save it as `crud.py`:<br>
     
     ```python
     from flask import Flask, request, jsonify
@@ -178,3 +178,17 @@ MarkupSafe issue.. the main parts of the error output are:<br>
     if __name__ == '__main__':
         app.run(debug=True)
     ```
+
+1. Run your crud.py:
+    1. ensure you're running in your appropriate virtual environment:
+        1. From the project directory:<br>
+            `source flask-env/bin/activate`
+        1. You should see your terminal indicate that you're operating in a 
+            different environment to your normal one (snip is vscode's 
+            terminal):<br>
+            ![activated-env-indication](readme-assets/activated-env-indication.png)
+    1. run the server with the command:<br>
+        `python crud.py`
+    1. Use a RESTful client (such as Postman) to craft and send the request
+        to the server to create a new user:<br>
+            ![readme-assets/postman-create-user](readme-assets/postman-create-user.png)
